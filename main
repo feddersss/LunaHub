@@ -1,3 +1,8 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Luna Hub", HidePremium = false, SaveConfig = true})
+local player = game.Players.LocalPlayer
+
+
 function correctKey()
    OrionLib:MakeNotification({
 	Name = "Correct Key",
@@ -79,4 +84,6 @@ if player.Name == "Advertiser2023" then
 end 
 
 end
+OrionLib:Init()
+
 
