@@ -2,38 +2,6 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Luna Hub", HidePremium = false, SaveConfig = true})
 local player = game.Players.LocalPlayer
 
-
-function correctKey()
-   OrionLib:MakeNotification({
-	Name = "Correct Key",
-	Content = "You are now logged in as "..player.Name.."",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-end
-
-function banned()
-   OrionLib:MakeNotification({
-	Name = "Banned",
-	Content = "You have been banned from Luna Hub",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-end
-
-function wrongKey()
-   OrionLib:MakeNotification({
-	Name = "Incorrect Key",
-	Content = "You entered the wrong key",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-end
-
-_G.key = "fed"
-_G.keyinput = "string"
-
-function makehub()
     local playerTab = Window:MakeTab({
         Name = "Player",
         Icon = "rbxassetid://4483345998",
@@ -83,7 +51,6 @@ if player.Name == "Advertiser2023" then
     })
 end 
 
-end
 OrionLib:Init()
 
 
