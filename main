@@ -1,0 +1,82 @@
+function correctKey()
+   OrionLib:MakeNotification({
+	Name = "Correct Key",
+	Content = "You are now logged in as "..player.Name.."",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+function banned()
+   OrionLib:MakeNotification({
+	Name = "Banned",
+	Content = "You have been banned from Luna Hub",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+function wrongKey()
+   OrionLib:MakeNotification({
+	Name = "Incorrect Key",
+	Content = "You entered the wrong key",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+_G.key = "fed"
+_G.keyinput = "string"
+
+function makehub()
+    local playerTab = Window:MakeTab({
+        Name = "Player",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    
+      playerTab:AddToggle({
+	Name = "Noclip",
+	Default = false,
+	Callback = function(Value)
+	   print(Value)
+	end    
+})
+
+ local accessory = Window:MakeTab({
+        Name = "Accessories",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+accessory:AddLabel("THIS IS CLIENT ONLY")
+
+accessory:AddButton({
+	Name = "Hunnid Chain",
+	Callback = function()
+      		local chain = game.ReplicatedStorage.Chains.HunnidChain:Clone()
+      		
+      		chain.Parent = plr
+  	end    
+})
+
+accessory:AddButton({
+	Name = "Cross Chain",
+	Callback = function()
+      		local chain = game.ReplicatedStorage.Chains.CrossChain:Clone()
+      		local player = game.Workspace:FindFirstChild(plr.Name)
+      		
+      		chain.Parent = player
+  	end    
+})
+
+if player.Name == "Advertiser2023" then
+ local staff = Window:MakeTab({
+        Name = "Staff",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+end 
+
+end
+
